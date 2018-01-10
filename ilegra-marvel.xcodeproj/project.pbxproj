@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473902A6E6D97BF3C34726F6 /* Pods_ilegra_marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678CA94543046927B74E0713 /* Pods_ilegra_marvel.framework */; };
 		D09425422006BFB1003CB895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09425412006BFB1003CB895 /* AppDelegate.swift */; };
 		D09425442006BFB1003CB895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09425432006BFB1003CB895 /* ViewController.swift */; };
 		D09425472006BFB1003CB895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09425452006BFB1003CB895 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4096C73309297DF90175B0D8 /* Pods-ilegra-marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ilegra-marvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ilegra-marvel/Pods-ilegra-marvel.debug.xcconfig"; sourceTree = "<group>"; };
+		678CA94543046927B74E0713 /* Pods_ilegra_marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ilegra_marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D094253E2006BFB1003CB895 /* ilegra-marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ilegra-marvel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09425412006BFB1003CB895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D09425432006BFB1003CB895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		D09425482006BFB1003CB895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D094254B2006BFB1003CB895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D094254D2006BFB1003CB895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19429C76B8FA2FDF2C6ABDC /* Pods-ilegra-marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ilegra-marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-ilegra-marvel/Pods-ilegra-marvel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473902A6E6D97BF3C34726F6 /* Pods_ilegra_marvel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05AA10BB0799155F18FE1F81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				678CA94543046927B74E0713 /* Pods_ilegra_marvel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97701EA785F45A0BF1A23DD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4096C73309297DF90175B0D8 /* Pods-ilegra-marvel.debug.xcconfig */,
+				D19429C76B8FA2FDF2C6ABDC /* Pods-ilegra-marvel.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D09425352006BFB1003CB895 = {
 			isa = PBXGroup;
 			children = (
 				D09425402006BFB1003CB895 /* ilegra-marvel */,
 				D094253F2006BFB1003CB895 /* Products */,
+				97701EA785F45A0BF1A23DD0 /* Pods */,
+				05AA10BB0799155F18FE1F81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D09425502006BFB1003CB895 /* Build configuration list for PBXNativeTarget "ilegra-marvel" */;
 			buildPhases = (
+				963D8F89CBA31502E7A57195 /* [CP] Check Pods Manifest.lock */,
 				D094253A2006BFB1003CB895 /* Sources */,
 				D094253B2006BFB1003CB895 /* Frameworks */,
 				D094253C2006BFB1003CB895 /* Resources */,
+				46C2E5254EF9CD454BEA15B1 /* [CP] Embed Pods Frameworks */,
+				51CAE4BDCAC95E57A12CFC23 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46C2E5254EF9CD454BEA15B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ilegra-marvel/Pods-ilegra-marvel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51CAE4BDCAC95E57A12CFC23 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ilegra-marvel/Pods-ilegra-marvel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		963D8F89CBA31502E7A57195 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D094253A2006BFB1003CB895 /* Sources */ = {
@@ -272,6 +347,7 @@
 		};
 		D09425512006BFB1003CB895 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4096C73309297DF90175B0D8 /* Pods-ilegra-marvel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +363,7 @@
 		};
 		D09425522006BFB1003CB895 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D19429C76B8FA2FDF2C6ABDC /* Pods-ilegra-marvel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
