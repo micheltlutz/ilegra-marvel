@@ -9,10 +9,22 @@
 /* Begin PBXBuildFile section */
 		473902A6E6D97BF3C34726F6 /* Pods_ilegra_marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678CA94543046927B74E0713 /* Pods_ilegra_marvel.framework */; };
 		D09425422006BFB1003CB895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09425412006BFB1003CB895 /* AppDelegate.swift */; };
-		D09425442006BFB1003CB895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09425432006BFB1003CB895 /* ViewController.swift */; };
-		D09425472006BFB1003CB895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09425452006BFB1003CB895 /* Main.storyboard */; };
 		D09425492006BFB1003CB895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09425482006BFB1003CB895 /* Assets.xcassets */; };
 		D094254C2006BFB1003CB895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D094254A2006BFB1003CB895 /* LaunchScreen.storyboard */; };
+		D0EE93A52006E91200044851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EE93A42006E91200044851 /* Main.storyboard */; };
+		D0EE93A72006EA5900044851 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93A62006EA5900044851 /* Responses.swift */; };
+		D0EE93A92006EA9000044851 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93A82006EA9000044851 /* Request.swift */; };
+		D0EE93AB2006EABB00044851 /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93AA2006EABB00044851 /* ApiURL.swift */; };
+		D0EE93AE2006EADC00044851 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93AD2006EADC00044851 /* ServerError.swift */; };
+		D0EE93B02006EDEF00044851 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93AF2006EDEF00044851 /* Character.swift */; };
+		D0EE93B42006F52B00044851 /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93B32006F52B00044851 /* CharactersTableViewController.swift */; };
+		D0EE93B72006F54300044851 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93B52006F54300044851 /* CharacterTableViewCell.swift */; };
+		D0EE93B82006F54300044851 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EE93B62006F54300044851 /* CharacterTableViewCell.xib */; };
+		D0EE93BB2006F8DE00044851 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93BA2006F8DE00044851 /* CharacterViewController.swift */; };
+		D0EE93BD2006FDBC00044851 /* RequestCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93BC2006FDBC00044851 /* RequestCharacter.swift */; };
+		D0EE93BF2007490200044851 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93BE2007490200044851 /* Page.swift */; };
+		D0EE93C12007497F00044851 /* RequestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93C02007497F00044851 /* RequestPage.swift */; };
+		D0EE93C42007596300044851 /* Dictionary+queryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE93C32007596200044851 /* Dictionary+queryString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +32,23 @@
 		678CA94543046927B74E0713 /* Pods_ilegra_marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ilegra_marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D094253E2006BFB1003CB895 /* ilegra-marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ilegra-marvel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09425412006BFB1003CB895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D09425432006BFB1003CB895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D09425462006BFB1003CB895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D09425482006BFB1003CB895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D094254B2006BFB1003CB895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D094254D2006BFB1003CB895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0EE93A42006E91200044851 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D0EE93A62006EA5900044851 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		D0EE93A82006EA9000044851 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D0EE93AA2006EABB00044851 /* ApiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiURL.swift; sourceTree = "<group>"; };
+		D0EE93AD2006EADC00044851 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		D0EE93AF2006EDEF00044851 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		D0EE93B32006F52B00044851 /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
+		D0EE93B52006F54300044851 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		D0EE93B62006F54300044851 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
+		D0EE93BA2006F8DE00044851 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		D0EE93BC2006FDBC00044851 /* RequestCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCharacter.swift; sourceTree = "<group>"; };
+		D0EE93BE2007490200044851 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		D0EE93C02007497F00044851 /* RequestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPage.swift; sourceTree = "<group>"; };
+		D0EE93C32007596200044851 /* Dictionary+queryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+queryString.swift"; sourceTree = "<group>"; };
 		D19429C76B8FA2FDF2C6ABDC /* Pods-ilegra-marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ilegra-marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-ilegra-marvel/Pods-ilegra-marvel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,14 +102,106 @@
 		D09425402006BFB1003CB895 /* ilegra-marvel */ = {
 			isa = PBXGroup;
 			children = (
+				D0EE93C22007594800044851 /* Extensions */,
+				D0F794682006E3680034492D /* Model */,
+				D0F794642006E32B0034492D /* ViewModel */,
+				D0F794692006E3700034492D /* Views */,
+				D0F7946A2006E3880034492D /* Storyboards */,
 				D09425412006BFB1003CB895 /* AppDelegate.swift */,
-				D09425432006BFB1003CB895 /* ViewController.swift */,
-				D09425452006BFB1003CB895 /* Main.storyboard */,
 				D09425482006BFB1003CB895 /* Assets.xcassets */,
-				D094254A2006BFB1003CB895 /* LaunchScreen.storyboard */,
 				D094254D2006BFB1003CB895 /* Info.plist */,
 			);
 			path = "ilegra-marvel";
+			sourceTree = "<group>";
+		};
+		D0EE93B12006F4EE00044851 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE93B52006F54300044851 /* CharacterTableViewCell.swift */,
+				D0EE93B62006F54300044851 /* CharacterTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D0EE93B22006F4FE00044851 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE93B32006F52B00044851 /* CharactersTableViewController.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		D0EE93B92006F8B100044851 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE93BA2006F8DE00044851 /* CharacterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0EE93C22007594800044851 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE93C32007596200044851 /* Dictionary+queryString.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0F794642006E32B0034492D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0F794662006E3410034492D /* Responses */,
+				D0F794652006E3350034492D /* Requests */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D0F794652006E3350034492D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE93A82006EA9000044851 /* Request.swift */,
+				D0EE93BC2006FDBC00044851 /* RequestCharacter.swift */,
+				D0EE93C02007497F00044851 /* RequestPage.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		D0F794662006E3410034492D /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE93A62006EA5900044851 /* Responses.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		D0F794682006E3680034492D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE93AA2006EABB00044851 /* ApiURL.swift */,
+				D0EE93AD2006EADC00044851 /* ServerError.swift */,
+				D0EE93AF2006EDEF00044851 /* Character.swift */,
+				D0EE93BE2007490200044851 /* Page.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0F794692006E3700034492D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE93B92006F8B100044851 /* View */,
+				D0EE93B22006F4FE00044851 /* Tables */,
+				D0EE93B12006F4EE00044851 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0F7946A2006E3880034492D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D094254A2006BFB1003CB895 /* LaunchScreen.storyboard */,
+				D0EE93A42006E91200044851 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D094254C2006BFB1003CB895 /* LaunchScreen.storyboard in Resources */,
+				D0EE93A52006E91200044851 /* Main.storyboard in Resources */,
 				D09425492006BFB1003CB895 /* Assets.xcassets in Resources */,
-				D09425472006BFB1003CB895 /* Main.storyboard in Resources */,
+				D0EE93B82006F54300044851 /* CharacterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,22 +328,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D09425442006BFB1003CB895 /* ViewController.swift in Sources */,
+				D0EE93BB2006F8DE00044851 /* CharacterViewController.swift in Sources */,
+				D0EE93BD2006FDBC00044851 /* RequestCharacter.swift in Sources */,
+				D0EE93AE2006EADC00044851 /* ServerError.swift in Sources */,
+				D0EE93AB2006EABB00044851 /* ApiURL.swift in Sources */,
+				D0EE93B42006F52B00044851 /* CharactersTableViewController.swift in Sources */,
+				D0EE93A72006EA5900044851 /* Responses.swift in Sources */,
+				D0EE93BF2007490200044851 /* Page.swift in Sources */,
+				D0EE93B02006EDEF00044851 /* Character.swift in Sources */,
+				D0EE93C42007596300044851 /* Dictionary+queryString.swift in Sources */,
+				D0EE93A92006EA9000044851 /* Request.swift in Sources */,
 				D09425422006BFB1003CB895 /* AppDelegate.swift in Sources */,
+				D0EE93C12007497F00044851 /* RequestPage.swift in Sources */,
+				D0EE93B72006F54300044851 /* CharacterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D09425452006BFB1003CB895 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D09425462006BFB1003CB895 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D094254A2006BFB1003CB895 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

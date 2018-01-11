@@ -12,11 +12,21 @@ def shared_pods
     #Mapper
     pod 'ObjectMapper'
     pod 'AlamofireObjectMapper'
+    
+    #Crypt 
+    pod 'CryptoSwift'
+    pod 'Dollar'
 end
 
-
-
 target 'ilegra-marvel' do
+    
+    use_frameworks!
     # Shared pods
     shared_pods
+    #plugin 'cocoapods-keys', {
+    #   :project => "ilegra-marvel",
+    #   :keys => [
+    #   "MarvelApiKey",
+    #   "MarvelPrivateKey"
+    #]}
 end

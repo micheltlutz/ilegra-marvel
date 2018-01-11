@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CharacterViewController.swift
 //  ilegra-marvel
 //
 //  Created by Michel Anderson Lutz Teixeira on 10/01/2018.
@@ -8,18 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class CharacterViewController: UIViewController {
+    
+    @IBOutlet weak var imgCharacter: UIImageView!
+    @IBOutlet weak var nameCaracter: UILabel!
+    
+    var selectedCharacter: Character?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        if let perso = selectedCharacter{
+            print("Character",perso)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
-

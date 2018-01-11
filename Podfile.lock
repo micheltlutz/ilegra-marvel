@@ -3,6 +3,8 @@ PODS:
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
+  - CryptoSwift (0.8.0)
+  - Dollar (7.0.0)
   - ObjectMapper (3.1.0)
   - SDWebImage (4.2.3):
     - SDWebImage/Core (= 4.2.3)
@@ -11,15 +13,19 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - AlamofireObjectMapper
+  - CryptoSwift
+  - Dollar
   - ObjectMapper
   - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  CryptoSwift: f81907430ebbe38b8404b4f6fb40f3c576a8755f
+  Dollar: b052b910c711bed91c26caeaec85aa22bccf1655
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
-PODFILE CHECKSUM: 19c34e9ec526aa4e350f669b7bed1db83abf5156
+PODFILE CHECKSUM: 9788b30ce61525112615d2f1362956ae7c365df7
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
