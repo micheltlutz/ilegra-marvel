@@ -77,7 +77,6 @@ class CharactersTableViewController: UITableViewController {
             switch response {
             case .success(let model):
                 self.total = model.data.total
-                print(model)
                 self.characters.append(contentsOf: model.data.results)
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
@@ -116,15 +115,15 @@ class CharactersTableViewController: UITableViewController {
     }
     /**
      :nodoc:
- 
+     */
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
         print("display row: \(indexPath.row)")
-        if indexPath.row == (resultCount - 1) {
-            pageCounter += 1
-            loadData(page: pageCounter)
+        if indexPath.row == (characters.count - 10) && !loadingCharacters && characters.count != total{
+            currentPage += 1
+            loadData()
         }
     }
- */
+ 
     /**
      :nodoc:
      */
