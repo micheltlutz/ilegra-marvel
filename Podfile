@@ -7,7 +7,7 @@ use_frameworks!
 def shared_pods
     # Network
     pod 'Alamofire', '~> 4.5'
-    pod 'SDWebImage'
+    pod 'Kingfisher', '~> 4.0'
 
     #Mapper
     pod 'ObjectMapper'
@@ -15,7 +15,6 @@ def shared_pods
     
     #Crypt 
     pod 'CryptoSwift'
-    pod 'Dollar'
 end
 
 target 'ilegra-marvel' do
@@ -23,10 +22,4 @@ target 'ilegra-marvel' do
     use_frameworks!
     # Shared pods
     shared_pods
-    #plugin 'cocoapods-keys', {
-    #   :project => "ilegra-marvel",
-    #   :keys => [
-    #   "MarvelApiKey",
-    #   "MarvelPrivateKey"
-    #]}
 end

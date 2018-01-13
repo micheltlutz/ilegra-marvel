@@ -8,41 +8,20 @@
 
 import Foundation
 import CryptoSwift
-import Dollar
-//import Keys
 
-fileprivate struct MarvelAPIConfig {
-    //fileprivate static let keys = MarvelKeys()
-    static let privatekey = "3579b3647844d2fea06b93f966204ba2e13fcd7b"
-    static let apikey = "963a1782f76f0085c4d3bdfdb4a698a0"
-    static let ts = Date().timeIntervalSince1970.description
-    static let hash = "\(ts)\(privatekey)\(apikey)".md5()
-}
 
-/*
- Your public key
- 963a1782f76f0085c4d3bdfdb4a698a0
- 
- Your private key
- 3579b3647844d2fea06b93f966204ba2e13fcd7b
- */
-
-enum MarvelAPI {
-    case characters(String?)
-    case character(String)
-}
-
-/**
- Struct ApiURL
- */
-struct ApiURL{
-    /// - String base
-    static let baseURL: String = "https://gateway.marvel.com"
-    static let characters: String = baseURL + "/v1/public/characters";
-    static let character: String = baseURL + "/v1/public/characters/"
-    func authParameters() -> [String: String] {
-        return ["apikey": MarvelAPIConfig.apikey,
-                "ts": MarvelAPIConfig.ts,
-                "hash": MarvelAPIConfig.hash]
+class ApiURL{
+    static let basePath = "https://gateway.marvel.com/v1/public"
+    static let pathCharacters = "/characters?"
+    static let pathCharacter = "/characters?"
+    static let limit = 50
+    static private let privateKey = "3579b3647844d2fea06b93f966204ba2e13fcd7b"
+    static private let publicKey = "963a1782f76f0085c4d3bdfdb4a698a0"
+    
+    static func getCredentials() -> String{
+        let ts = Date().timeIntervalSince1970.description
+        let hash = "\(ts)\(privateKey)\(publicKey)".md5()
+        let authParams = ["ts": ts, "apikey": publicKey, "hash": hash]
+        return authParams.queryString!
     }
 }

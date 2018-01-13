@@ -7,25 +7,24 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 
 class CharacterTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var imgCharacter: UIView!
+    @IBOutlet weak var imgCharacter: UIImageView!
     @IBOutlet weak var nameCharacter: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureCell(with character: Character){
         nameCharacter.text = character.name
+        if let url = URL(string: character.thumbnail.getUrl()){
+            imgCharacter.kf.indicatorType = .activity
+            imgCharacter.kf.setImage(with: url)
+        } else {
+            imgCharacter.image = UIImage(named: "no_avatar")
+        }
+        imgCharacter.layer.cornerRadius = imgCharacter.frame.size.height / 2
+        imgCharacter.layer.borderColor = UIColor(hex: "545263").cgColor
     }
 }

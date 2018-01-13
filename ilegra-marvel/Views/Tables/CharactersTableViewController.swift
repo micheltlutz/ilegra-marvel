@@ -13,18 +13,18 @@ import ObjectMapper
  CharactersTableViewController Table View controller para characters
  */
 class CharactersTableViewController: UITableViewController {
-    
-    let requestPage = RequestPage()
-    
-    var page: Page?
-    
+    ///RequestCharacter
+    let requestCharacter = RequestCharacter()
+    ///DataSource de Character
     var characters: [Character] = []
-    
-    var resultCount = 0
-    
-    var pageCounter = 1
-    
-    var selectedCharacter: Character?
+    ///Flag indicativa de carregamento usada para endlessscroll
+    var loadingCharacters = false
+    ///Página atual usada para calculo do offset posteriormente
+    var currentPage = 0
+    ///Total de characters carregados
+    var total = 0
+    ///Armazena Character selecionado na tableView
+    var selectedCharacter: Character? = nil
     
     ///UIActivityIndicatorView activityIndicator
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -33,9 +33,9 @@ class CharactersTableViewController: UITableViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData(page: pageCounter)
+        loadData()
         confifureNib()
-        if resultCount == 0{
+        if characters.count == 0{
             self.initActivityIndicator()
         }
     }
@@ -53,7 +53,7 @@ class CharactersTableViewController: UITableViewController {
     func initActivityIndicator(){
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
     }
@@ -71,15 +71,17 @@ class CharactersTableViewController: UITableViewController {
     /**
      Carrega dados da Api atualiza itens da tabela e recarrega table
      */
-    private func loadData(page: Int){
-        requestPage.getDataPage(page: String(pageCounter)){ (response) in
+    private func loadData(){
+        loadingCharacters = true
+        requestCharacter.loadCharacters(name: "",page: currentPage) { (response) in
             switch response {
             case .success(let model):
-                self.page = model
-                self.characters.append(contentsOf: model.results)
-                self.resultCount += model.results.count
+                self.total = model.data.total
+                print(model)
+                self.characters.append(contentsOf: model.data.results)
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
+                self.loadingCharacters = false
             case .serverError(let description):
                 print("Server error: \(description) \n")
             case .noConnection(let description):
@@ -92,15 +94,9 @@ class CharactersTableViewController: UITableViewController {
     // MARK: - Table view data source
     /**
      :nodoc:
-     */
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    /**
-     :nodoc:
-     */
+    */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.resultCount
+        return characters.count
     }
     /**
      :nodoc:
@@ -120,7 +116,7 @@ class CharactersTableViewController: UITableViewController {
     }
     /**
      :nodoc:
-     */
+ 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
         print("display row: \(indexPath.row)")
         if indexPath.row == (resultCount - 1) {
@@ -128,6 +124,7 @@ class CharactersTableViewController: UITableViewController {
             loadData(page: pageCounter)
         }
     }
+ */
     /**
      :nodoc:
      */
@@ -135,7 +132,7 @@ class CharactersTableViewController: UITableViewController {
         self.selectedCharacter = self.characters[indexPath.row]
         self.performSegue(withIdentifier: "characterSegue", sender: nil)
     }
-    
+ 
     // MARK: - Navigation
     /**
      :nodoc:

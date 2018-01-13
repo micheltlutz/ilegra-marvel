@@ -21,8 +21,10 @@ struct Character: Mappable{
     var name: String
     ///String description
     var description: String
+    ///Thumbnail thumbnail
+    var thumbnail: Thumbnail
     ///String thumbnail
-    var thumbnail: String
+    var urls: [CharacterURL]
     
     /**
      - Parameter map: `Map`
@@ -31,7 +33,8 @@ struct Character: Mappable{
         id = (try? map.value("id")) ?? 0
         name = (try? map.value("name")) ?? ""
         description = (try? map.value("description")) ?? ""
-        thumbnail = (try? map.value("thumbnail")) ?? ""
+        thumbnail = (try? map.value("thumbnail")) ?? Thumbnail(map: map)!
+        urls = [(try? map.value("urls")) ?? CharacterURL(map: map)!]
     }
     
     /**
@@ -42,5 +45,6 @@ struct Character: Mappable{
         name <- map["name"]
         description <- map["description"]
         thumbnail <- map["thumbnail"]
+        urls <- map["urls"]
     }
 }

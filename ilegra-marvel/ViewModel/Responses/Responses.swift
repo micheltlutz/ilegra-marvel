@@ -16,9 +16,9 @@ import Foundation
  - timeOut: ServerError
  - noConnection: ServerError
  */
-enum ResponsePage{
+enum ResponseMarvelInfo{
     ///success: Page
-    case success(model: Page)
+    case success(model: MarvelInfo)
     ///serverError: ServerError
     case serverError(description: ServerError)
     ///timeOut: ServerError
