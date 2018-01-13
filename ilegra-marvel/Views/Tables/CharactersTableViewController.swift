@@ -25,7 +25,12 @@ class CharactersTableViewController: UITableViewController {
     var total = 0
     ///Armazena Character selecionado na tableView
     var selectedCharacter: Character? = nil
-    
+    ///name do character
+    var nameSearch = ""
+    /**
+     :nodoc:
+     */
+    @IBOutlet weak var searchBar: UISearchBar!
     ///UIActivityIndicatorView activityIndicator
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     /**
@@ -38,6 +43,7 @@ class CharactersTableViewController: UITableViewController {
         if characters.count == 0{
             self.initActivityIndicator()
         }
+        searchBar.delegate = self
     }
     /**
      :nodoc:
@@ -73,7 +79,7 @@ class CharactersTableViewController: UITableViewController {
      */
     private func loadData(){
         loadingCharacters = true
-        requestCharacter.loadCharacters(name: "",page: currentPage) { (response) in
+        requestCharacter.loadCharacters(name: nameSearch, page: currentPage) { (response) in
             switch response {
             case .success(let model):
                 self.total = model.data.total
@@ -90,6 +96,15 @@ class CharactersTableViewController: UITableViewController {
             }
         }
     }
+    /**
+     Limpa Chatacters e faz busca com nome ou sem para limpar a tabela
+     */
+    private func cleanLoadDada(){
+        characters = []
+        nameSearch = ""
+        loadData()
+    }
+    
     // MARK: - Table view data source
     /**
      :nodoc:
@@ -117,7 +132,7 @@ class CharactersTableViewController: UITableViewController {
      :nodoc:
      */
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
-        print("display row: \(indexPath.row)")
+        //print("display row: \(indexPath.row)")
         if indexPath.row == (characters.count - 10) && !loadingCharacters && characters.count != total{
             currentPage += 1
             loadData()
@@ -140,6 +155,42 @@ class CharactersTableViewController: UITableViewController {
         if segue.identifier == "characterSegue"{
             let view = segue.destination as! CharacterViewController
             view.selectedCharacter = self.selectedCharacter
+        }
+    }
+}
+
+/**
+ :nodoc:
+ */
+extension CharactersTableViewController: UISearchBarDelegate{
+    /**
+     :nodoc:
+     */
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        resignFirstResponder()
+        activityIndicator.startAnimating()
+        if let search = searchBar.text{
+            characters = []
+            nameSearch = search
+            loadData()
+        }
+    }
+    /**
+     :nodoc:
+     */
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if searchBar.text!.isEmpty{
+            cleanLoadDada()
+        } else {
+            loadData()
+        }
+    }
+    /**
+     :nodoc:
+     */
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if characters.count == 0 {
+            cleanLoadDada()
         }
     }
 }

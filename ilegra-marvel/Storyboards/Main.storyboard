@@ -22,9 +22,16 @@
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" name="BORDER_IMAGE"/>
                         <color key="sectionIndexBackgroundColor" name="BORDER_IMAGE"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" placeholder="Buscar personagem" id="6ba-qT-mEr">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" name="BORDER_IMAGE"/>
+                            <color key="barTintColor" name="BG_COLOR"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" textContentType="name"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="characterCell" id="G95-df-lTK" customClass="CharacterTableViewCell" customModule="ilegra_marvel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G95-df-lTK" id="dsn-VD-1tP">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -44,6 +51,9 @@
                     <navigationItem key="navigationItem" title="Personagens" id="ncm-SL-K4d">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="6Iw-c0-nYy"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="6ba-qT-mEr" id="p88-w6-xrd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSV-mV-Yh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +89,7 @@
                                 <rect key="frame" x="47" y="446" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="BASE_COLOR"/>
-                                <state key="normal" title="Acessar Página do Personagem">
+                                <state key="normal" title="Acessar página do personagem">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -90,7 +100,7 @@
                         <color key="backgroundColor" name="BG_COLOR"/>
                         <viewLayoutGuide key="safeArea" id="Hmd-Ce-whu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detalhe Personagem" id="ItN-ac-2cU">
+                    <navigationItem key="navigationItem" title="Detalhe personagem" id="ItN-ac-2cU">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="HxA-q2-JXL"/>
                     </navigationItem>
                     <connections>
