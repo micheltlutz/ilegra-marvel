@@ -10,31 +10,35 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-
-
 /**
  Class RequestCharacter
  
  - Extends: `Request`
  */
 class RequestCharacter: Request{
-    
+    /**
+     func loadCharacters retorna Model ResponseMarvelInfo
+     
+     - Parameters:
+     - name: Optional para busca por nome de personagem
+     - page: Número da página em Int
+     - completion: @escaping `ResponseMarvelInfo`
+     
+     - SeeAlso: `ResponseMarvelInfo`
+     */
     func loadCharacters(name: String?, page: Int = 0, onComplete: @escaping (_ response: ResponseMarvelInfo) -> Void){
         let offset = page * ApiURL.limit
         var queryParams: [String:String] = ["offset": String(offset), "limit": String(ApiURL.limit)]
         if let name = name, !name.isEmpty{
             queryParams["nameStartsWith"] = name.replacingOccurrences(of: " ", with: "")
         }
-        
         let url = ApiURL.basePath + ApiURL.pathCharacters + queryParams.queryString! + ApiURL.getCredentials()
-        print("\n\n\n\n\nURL API\n\n\n\n\n", url, "\n\n\n\n\n")
         Alamofire.request(url).responseJSON { (response) in
             let statusCode = response.response?.statusCode
             switch response.result{
                 case .success(let value):
                     let resultValue = value as? [String: Any]
                     if statusCode == 200{
-                        //let model = Mapper<MarvelInfo>().mapArray(JSONArray: response.result.value as! [[String : Any]])
                         let model = Mapper<MarvelInfo>().map(JSONObject:resultValue)
                         onComplete(.success(model: model!))
                     }

@@ -32,7 +32,10 @@ struct Thumbnail: Mappable{
         path <- map["path"]
         ext <- map["extension"]
     }
-    
+    /**
+     Concatena path com ext para formar a url da imagem
+     - Returns: String url com extensão da imagem
+     */
     func getUrl() -> String{
         return path + "." + ext
     }

@@ -74,21 +74,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Qe-XU-8kI">
-                                <rect key="frame" x="16" y="128" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Qe-XU-8kI">
+                                <rect key="frame" x="20" y="136" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="K14-e3-uHp"/>
+                                    <constraint firstAttribute="width" constant="100" id="s88-Ah-Qvc"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-YH-bHZ">
-                                <rect key="frame" x="124" y="128" width="235" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khb-6T-Q7g">
-                                <rect key="frame" x="47" y="446" width="280" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khb-6T-Q7g">
+                                <rect key="frame" x="30" y="567" width="315" height="50"/>
                                 <color key="backgroundColor" name="BASE_COLOR"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="V6C-US-QQ1"/>
+                                </constraints>
                                 <state key="normal" title="Acessar página do personagem">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -96,8 +94,25 @@
                                     <segue destination="AIz-lg-1np" kind="show" identifier="webPageCharacterSegue" id="WbB-69-wKA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-YH-bHZ">
+                                <rect key="frame" x="136" y="170.5" width="239" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="BG_COLOR"/>
+                        <constraints>
+                            <constraint firstItem="6Qe-XU-8kI" firstAttribute="leading" secondItem="Hmd-Ce-whu" secondAttribute="leading" constant="20" id="8uM-BG-eaH"/>
+                            <constraint firstItem="Hmd-Ce-whu" firstAttribute="bottom" secondItem="khb-6T-Q7g" secondAttribute="bottom" constant="50" id="HuV-Cr-D0G"/>
+                            <constraint firstItem="Hmd-Ce-whu" firstAttribute="trailing" secondItem="khb-6T-Q7g" secondAttribute="trailing" constant="30" id="JrJ-ic-yaX"/>
+                            <constraint firstItem="khb-6T-Q7g" firstAttribute="leading" secondItem="Hmd-Ce-whu" secondAttribute="leading" constant="30" id="KVh-Et-94s"/>
+                            <constraint firstItem="LbG-YH-bHZ" firstAttribute="leading" secondItem="6Qe-XU-8kI" secondAttribute="trailing" constant="16" id="X8O-y0-yaB"/>
+                            <constraint firstItem="Hmd-Ce-whu" firstAttribute="bottom" secondItem="khb-6T-Q7g" secondAttribute="bottom" constant="50" id="id3-ck-oLP"/>
+                            <constraint firstItem="LbG-YH-bHZ" firstAttribute="trailing" secondItem="Hmd-Ce-whu" secondAttribute="trailing" id="l8m-Hx-35q"/>
+                            <constraint firstItem="LbG-YH-bHZ" firstAttribute="centerY" secondItem="6Qe-XU-8kI" secondAttribute="centerY" id="pgh-7W-Klh"/>
+                            <constraint firstItem="6Qe-XU-8kI" firstAttribute="top" secondItem="Hmd-Ce-whu" secondAttribute="top" constant="20" id="rfJ-eE-kBl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Hmd-Ce-whu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detalhe personagem" id="ItN-ac-2cU">

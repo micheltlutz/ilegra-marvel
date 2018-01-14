@@ -9,6 +9,10 @@
 import Foundation
 import ObjectMapper
 
+/**
+ MarvelData extends `Mappable`
+    - SeeAlso: `Mappable`
+*/
 struct MarvelData: Mappable{
     ///Int offset
     var offset: Int
@@ -18,7 +22,7 @@ struct MarvelData: Mappable{
     var total: Int
     ///Int count
     var count: Int
-    ///results: [Character]
+    ///Array [Character] results
     var results: [Character]
     
     /**

@@ -9,19 +9,30 @@
 import UIKit
 
 class CharacterViewController: UIViewController {
-    
+    /**
+     :nodoc:
+     */
     @IBOutlet weak var imgCharacter: UIImageView!
+    /**
+     :nodoc:
+     */
     @IBOutlet weak var nameCharacter: UILabel!
+    /**
+     :nodoc:
+     */
     @IBOutlet weak var descCharacter: UILabel!
+    /**
+     :nodoc:
+     */
     @IBOutlet weak var btnWebPage: UIButton!
-    
+    ///selectedCharacter Character character selecionado na lista
     var selectedCharacter: Character?
-    
+    /**
+     :nodoc:
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let character = selectedCharacter{
-            print("Character",character)
             nameCharacter.text = character.name
             if let url = URL(string: character.thumbnail.getUrl()){
                 imgCharacter.kf.indicatorType = .activity
@@ -30,14 +41,16 @@ class CharacterViewController: UIViewController {
                 imgCharacter.image = UIImage(named: "no_avatar")
             }
             descCharacter.text = !character.description.isEmpty ? character.description : "Personagem sem Descrição."
-            
             if character.urls.count == 0{
                 btnWebPage.isEnabled = false
                 btnWebPage.setTitle("Personagem sem página", for: .disabled)
             }
         }
     }
-
+    
+    /**
+     :nodoc:
+     */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -52,7 +65,4 @@ class CharacterViewController: UIViewController {
             view.character = self.selectedCharacter
         }
     }
-    /*
-    @IBAction func openWebPage(_ sender: Any) {  
-    }*/
 }

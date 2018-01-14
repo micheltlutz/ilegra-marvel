@@ -23,7 +23,7 @@ struct Character: Mappable{
     var description: String
     ///Thumbnail thumbnail
     var thumbnail: Thumbnail
-    ///String thumbnail
+    ///Array CharacterURL
     var urls: [CharacterURL]
     
     /**

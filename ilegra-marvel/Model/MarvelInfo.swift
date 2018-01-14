@@ -9,12 +9,16 @@
 import Foundation
 import ObjectMapper
 
+/**
+ MarvelInfo extends `Mappable`
+ - SeeAlso: `Mappable`
+ */
 struct MarvelInfo: Mappable{
     ///Int code
     var code: Int
     //String status
     var status: String
-    //MarvelData status
+    //MarvelData data
     var data: MarvelData
     /**
      - Parameter map: `Map`

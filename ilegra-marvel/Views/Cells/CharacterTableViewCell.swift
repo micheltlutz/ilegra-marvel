@@ -8,14 +8,21 @@
 
 import UIKit
 import Kingfisher
-
+/**
+ CharacterTableViewCell UITableViewCell para character
+ */
 class CharacterTableViewCell: UITableViewCell {
     @IBOutlet weak var imgCharacter: UIImageView!
     @IBOutlet weak var nameCharacter: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+    /**
+     Método que recebe um character e configura celula
+     
+     - Parameters:
+     - character: Character
+     */
     func configureCell(with character: Character){
         nameCharacter.text = character.name
         if let url = URL(string: character.thumbnail.getUrl()){

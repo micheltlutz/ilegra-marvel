@@ -8,7 +8,11 @@
 
 import Foundation
 
+/**
+extension Dictionary
+ */
 extension Dictionary {
+    ///Variável computada que retorna Dictionary em formato de query string
     var queryString: String? {
         return self.reduce("") { "\($0!)\($1.0)=\($1.1)&" }
     }

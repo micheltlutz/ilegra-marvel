@@ -9,9 +9,9 @@
 import Foundation
 
 /**
- Response Page
- 
- - success:  Page
+ Response ResponseMarvelInfo
+
+ - success:  ResponseMarvelInfo
  - serverError: ServerError
  - timeOut: ServerError
  - noConnection: ServerError
@@ -29,8 +29,7 @@ enum ResponseMarvelInfo{
 
 /**
  Response Character
- 
- - success:  [Pull]
+ - success:  [Character]
  - serverError: ServerError
  - timeOut: ServerError
  - noConnection: ServerError
